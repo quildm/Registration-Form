@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>result page</title>
+    </head>
+    <body>
+      <h1>Submitted Info</h1>
+    {% with messages = get_flashed_messages(category_filter=["firstNameError"]) %}
+        {% if messages %}
+            {% for message in messages %}
+    <h1>{{message}}</h1>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <p>First Name: {{firstNamed}}</p>
+
+    {% with messages = get_flashed_messages(category_filter=["lastNameError"]) %}
+    {% if messages %}
+    {% for message in messages %}
+    <h1>{{message}}</h1>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <p>Last Name: {{lastNamed}}</p>
+
+    {% with messages = get_flashed_messages(category_filter=["emailError"]) %}
+    {% if messages %}
+        {% for message in messages %}
+            <h1>{{message}}</h1>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <p>E-mail: {{emailEd}}</p>
+
+    {% with messages = get_flashed_messages(category_filter=["passwordError"]) %}
+    {% if messages %}
+        {% for message in messages %}
+            <h1>{{message}}</h1>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <p>Password:{{passWorded}}</p>
+        
+
+    </body>
+</html>
